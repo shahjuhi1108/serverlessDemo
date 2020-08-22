@@ -8,7 +8,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs12.x
 
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
@@ -46,6 +46,9 @@ custom:
       - name: GroupRequest
         contentType: application/json
         schema: ${file(models/create-group-request.json)}
+      - name: ImageRequest
+        contentType: application/json
+        schema: ${file(models/create-image-request.json)}
 
 functions:
 
